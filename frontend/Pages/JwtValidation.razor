@@ -52,8 +52,9 @@ POST /product <br>
 
     async void Add()
     {
-        Configs.Client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
-        var response = await Configs.Client.PostAsJsonAsync<Product>(
+        var client = Configs.Client;
+        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}");
+        var response = await client.PostAsJsonAsync<Product>(
             $"/product", new Product(title, value)
         );
         
