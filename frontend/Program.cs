@@ -10,7 +10,7 @@ await builder.Build().RunAsync();
 
 public static class Configs
 {
-    public static string Backend { get; set; } = "http://localhost:8080/";
+    public static string Backend { get; set; } = "http://http:/localhost:5257";
 
     public static HttpClient Client {
         get
